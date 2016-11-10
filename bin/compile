@@ -22,6 +22,6 @@ else
   rm -rf boost_1_62_0 boost_1_62_0.tar.bz2
 fi
 
-export BOOST_ROOT=$CACHE_DIR
+#export BOOST_ROOT=$CACHE_DIR
 export CMAKE_LIBRARY_PATH="$CACHE_DIR/lib:$CMAKE_LIBRARY_PATH"
 export CMAKE_INCLUDE_PATH="$CACHE_DIR/include:$CMAKE_INCLUDE_PATH"
