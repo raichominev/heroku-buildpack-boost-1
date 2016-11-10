@@ -4,7 +4,7 @@
 BUILD_DIR=$1
 CACHE_DIR=$2
 
-URL_BOOST=https://sourceforge.net/projects/boost/files/boost/1.62.0/boost_1_62_0.tar.bz2/
+URL_BOOST=https://sourceforge.net/projects/boost/files/boost/1.62.0/boost_1_62_0.tar.bz2
 
 cd $CACHE_DIR
 rm -rf *
