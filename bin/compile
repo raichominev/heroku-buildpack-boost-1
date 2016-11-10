@@ -8,6 +8,7 @@ CACHE_DIR=$2
 
 URL_BOOST=https://sourceforge.net/projects/boost/files/boost/1.62.0/boost_1_62_0.tar.bz2
 
+mkdir -p $CACHE_DIR
 cd $CACHE_DIR
 if [ -e $CACHE_DIR/include/boost/version.hpp ]; then
   echo "Boost found in: $CACHE_DIR/include/boost/version.hpp"
