@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
 # bin/release <build-dir>
 
-echo "--- {}"
+cat <<EOF
+---
+config_vars:
+  BOOST_INCLUDEDIR: $CACHE_DIR/include
+  BOOST_LIBRARYDIR: $CACHE_DIR/lib
+EOF
