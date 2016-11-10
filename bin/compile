@@ -4,19 +4,22 @@
 BUILD_DIR=$1
 CACHE_DIR=$2
 
-URL_BOOST=https://sourceforge.net/projects/boost/files/boost/1.62.0/boost_1_62_0.tar.bz2/download
+URL_BOOST=https://sourceforge.net/projects/boost/files/boost/1.62.0/boost_1_62_0.tar.bz2
 
 cd $CACHE_DIR
 if [ -e $CACHE_DIR/include/boost/version.hpp ]; then
   echo "Boost found in: $CACHE_DIR/include/boost/version.hpp"
 else
-  wget $URL_BOOST -o boost.tar.bz2
-  tar xjf boost.tar.bz2
+  echo "downloding boost..."
+  wget $URL_BOOST
+  echo "extrating files..."
+  tar xjf boost_1_62_0.tar.bz2
   cd boost_1_62_0
   ./bootstrap.sh
+  echo "compiling library..."
   ./b2 install --link=static --prefix=$CACHE_DIR
   cd ..
-  rm -rf boost_1_62_0 boost.tar.bz2
+  rm -rf boost_1_62_0 boost_1_62_0.tar.bz2
 fi
 
 export BOOST_ROOT=$CACHE_DIR
