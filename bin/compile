@@ -4,9 +4,10 @@
 BUILD_DIR=$1
 CACHE_DIR=$2
 
-URL_BOOST=http://sourceforge.net/projects/boost/files/boost/1.62.0/boost_1_62_0.tar.bz2/download
+URL_BOOST=https://sourceforge.net/projects/boost/files/boost/1.62.0/boost_1_62_0.tar.bz2/
 
 cd $CACHE_DIR
+rm -rf *
 if [ -e $CACHE_DIR/include/boost/version.hpp ]; then
   echo "Boost found in: $CACHE_DIR/include/boost/version.hpp"
 else
