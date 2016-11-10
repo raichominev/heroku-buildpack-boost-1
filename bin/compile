@@ -17,7 +17,7 @@ else
   cd boost_1_62_0
   ./bootstrap.sh
   echo "compiling library..."
-  ./b2 install --link=static --prefix=$CACHE_DIR
+  ./b2 install variant=release link=static runtime-link=static --prefix=$CACHE_DIR
   cd ..
   rm -rf boost_1_62_0 boost_1_62_0.tar.bz2
 fi
