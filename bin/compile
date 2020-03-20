@@ -20,7 +20,7 @@ else
   cd boost_1_62_0
   ./bootstrap.sh
   echo "compiling library..."
-  ./b2 cxxflags=-fPIC --with-python install variant=release link=static runtime-link=static -j3 --prefix=$CACHE_DIR address-model=64 architecture=x86
+  ./b2 "cxxflags=-fPIC -Wdeprecated-declarations" --with-python install variant=release link=static runtime-link=static -j3 --prefix=$CACHE_DIR address-model=64 architecture=x86
   cd ..
   rm -rf boost_1_62_0 boost_1_62_0.tar.bz2
 fi
