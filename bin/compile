@@ -3,10 +3,8 @@
 
 set -e
 
-BUILD_DIR=$1
-CACHE_DIR=$2
-
-export BUILD_DIR1=$1
+export BUILD_DIR=$1
+export CACHE_DIR=$2
 
 URL_BOOST=https://sourceforge.net/projects/boost/files/boost/1.62.0/boost_1_62_0.tar.bz2
 
@@ -42,8 +40,8 @@ export BOOST_ROOT=/app/.heroku/boost
 export BOOST_INCLUDEDIR=$BOOST_ROOT/include
 export BOOST_LIBRARYDIR=$BOOST_ROOT/lib
 
-export LIBRARY_PATH="$BOOST_INCLUDEDIR:$LIBRARY_PATH"
-export C_INCLUDE_PATH="$BOOST_LIBRARYDIR:$C_INCLUDE_PATH"
+export LIBRARY_PATH="$BUILD_DIR/exiv2-lx64-0.27.2/lib:$BOOST_INCLUDEDIR:$LIBRARY_PATH"
+export C_INCLUDE_PATH="$BUILD_DIR/exiv2-lx64-0.27.2/include:$BOOST_LIBRARYDIR:$C_INCLUDE_PATH"
 
 echo "$BOOST_INCLUDEDIR"
 echo "$BOOST_LIBRARYDIR"
