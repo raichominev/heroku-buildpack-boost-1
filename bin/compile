@@ -25,12 +25,19 @@ else
   rm -rf boost_1_62_0 boost_1_62_0.tar.bz2
 fi
 
-#export BOOST_ROOT=$CACHE_DIR
+
+export BOOST_ROOT=.heroku/boost
+mkdir -p $BOOST_ROOT
+
+cp -R "$CACHE_DIR/include/" .heroku/boost/
+cp -R "$CACHE_DIR/lib/" .heroku/boost/
+
 #export CMAKE_LIBRARY_PATH="$CACHE_DIR/lib:$CMAKE_LIBRARY_PATH"
 #export CMAKE_INCLUDE_PATH="$CACHE_DIR/include:$CMAKE_INCLUDE_PATH"
 #setenv "BOOST_ROOT" "$CACHE_DIR"
-export BOOST_INCLUDEDIR=$CACHE_DIR/include
-export BOOST_LIBRARYDIR=$CACHE_DIR/lib
+
+export BOOST_INCLUDEDIR=$BOOST_ROOT/include
+export BOOST_LIBRARYDIR=$BOOST_ROOT/lib
 
 echo "$BOOST_INCLUDEDIR"
 echo "$BOOST_LIBRARYDIR"
