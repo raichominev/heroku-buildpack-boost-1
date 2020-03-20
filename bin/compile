@@ -26,7 +26,7 @@ else
 fi
 
 
-export BOOST_ROOT=.heroku/boost
+export BOOST_ROOT=/app/.heroku/boost
 mkdir -p $BOOST_ROOT
 
 cp -R "$CACHE_DIR/include/" .heroku/boost/
