@@ -28,7 +28,7 @@ fi
 cd $BUILD_DIR
 mkdir -p .heroku
 
-cd $.heroku
+cd .heroku
 mkdir -p boost
 
 cp -R "$CACHE_DIR/include/" $BUILD_DIR/.heroku/boost/
